@@ -5,7 +5,7 @@ class Dep{
     addDep(dep){
         this.deps.push(dep);
     }
-    notify(){
+    notify(){ 
         this.deps.forEach(dep=>{
             dep.update();
         });

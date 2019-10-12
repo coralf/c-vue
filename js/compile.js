@@ -28,11 +28,10 @@ class Compile {
                     console.log(attr);
                     const attrName = attr.name;
                     const exp = attr.value;
-                    //如果是k-指令
+                    //如果是c-指令
                     if (this.isDrective(attrName)) {
                         const dir = attrName.substring(2);
                         console.log('dir',dir);
-                        
                         this[dir] && this[dir](node, this.$vm, exp);
                     }
                     if (this.isEvent(attrName)) {
@@ -106,7 +105,6 @@ class Compile {
     model(node, vm, exp) {
         // 指定input的value属性
         this.update(node, vm, exp, "model");
-
         // 视图对模型响应
         node.addEventListener("input", e => {
             vm[exp] = e.target.value;
@@ -114,7 +112,6 @@ class Compile {
     }
 
     modelUpdater(node, value) {
-
         node.value = value;
     }
 

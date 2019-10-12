@@ -17,17 +17,17 @@
         <button @click="updateName">点我</button>
         <div c-html="html"></div>
     </div>
-    <script src="./dep.js"></script>
-    <script src="./watcher.js"></script>
-    <script src="./compile.js"></script>
-    <script src="./cvue.js"></script>
+    <script src="./js/dep.js"></script>
+    <script src="./js/watcher.js"></script>
+    <script src="./js/compile.js"></script>
+    <script src="./js/cvue.js"></script>
     <script>
         new CVue({
             el:"#app",
             data:{
                 name:'coral',
                 age:2,
-                html:"<button>disdoi</button>",
+                html:"<button>我是被渲染出来的button</button>",
             },
             created(){
                 console.log('created 函数执行');
@@ -42,10 +42,6 @@
                 }
             }
         });
-    
     </script>
-
-
-
 </body>
 </html>
