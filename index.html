@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{name}}}</p>
+        <p>{{age}}</p>
+        <p c-test="name"></p>
+        <p>{{name}}</p>
+        <p>{{sex}}</p>
+        <input type="text" c-model="name"/>
+        <button @click="updateName">点我</button>
+        <div c-html="html"></div>
+    </div>
+    <script src="./dep.js"></script>
+    <script src="./watcher.js"></script>
+    <script src="./compile.js"></script>
+    <script src="./cvue.js"></script>
+    <script>
+        new CVue({
+            el:"#app",
+            data:{
+                name:'coral',
+                age:2,
+                html:"<button>disdoi</button>",
+            },
+            created(){
+                console.log('created 函数执行');
+                setTimeout(()=>{
+                    this.name='我是被修改过后的 coral';
+                },2000);
+            },
+            methods:{
+                updateName(){
+                    this.name='点击事件被触发了';
+                    this.age=18;
+                }
+            }
+        });
+    
+    </script>
+
+
+
+</body>
+</html>
